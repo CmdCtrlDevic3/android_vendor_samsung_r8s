@@ -40,11 +40,15 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/r8s/proprietary/vendor/firmware/qca6390/bdwlan.elf2:$(TARGET_COPY_OUT_VENDOR)/firmware/qca6390/bdwlan.elf2 \
     vendor/samsung/r8s/proprietary/vendor/firmware/qca6390/m3.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/qca6390/m3.bin \
     vendor/samsung/r8s/proprietary/vendor/firmware/qca6390/regdb.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/qca6390/regdb.bin \
+    vendor/samsung/r8s/proprietary/vendor/firmware/rxse.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/rxse.bin \
     vendor/samsung/r8s/proprietary/vendor/firmware/setfile_2ld.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/setfile_2ld.bin \
     vendor/samsung/r8s/proprietary/vendor/firmware/setfile_3l6.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/setfile_3l6.bin \
     vendor/samsung/r8s/proprietary/vendor/firmware/setfile_hi847.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/setfile_hi847.bin \
     vendor/samsung/r8s/proprietary/vendor/firmware/setfile_imx616.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/setfile_imx616.bin \
+    vendor/samsung/r8s/proprietary/vendor/firmware/txse1.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/txse1.bin \
+    vendor/samsung/r8s/proprietary/vendor/firmware/vts.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/vts.bin \
     vendor/samsung/r8s/proprietary/vendor/firmware/wlan/qcom_cfg.ini:$(TARGET_COPY_OUT_VENDOR)/firmware/wlan/qcom_cfg.ini \
+    vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-000000010081:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-000000010081 \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-000000534b4d:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-000000534b4d \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-0000534b504d:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-0000534b504d \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-0050524f4341:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-0050524f4341 \
@@ -56,6 +60,7 @@ PRODUCT_COPY_FILES += \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-505256544545:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-505256544545 \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-534258505859:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-534258505859 \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-5345435f4652:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-5345435f4652 \
+    vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-53454d655345:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-53454d655345 \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-54412d48444d:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-54412d48444d \
     vendor/samsung/r8s/proprietary/vendor/tee/00000000-0000-0000-0000-657365636f6d:$(TARGET_COPY_OUT_VENDOR)/tee/00000000-0000-0000-0000-657365636f6d \
     vendor/samsung/r8s/proprietary/vendor/tee/driver/00000000-0000-0000-0000-53626f786476:$(TARGET_COPY_OUT_VENDOR)/tee/driver/00000000-0000-0000-0000-53626f786476
@@ -65,17 +70,25 @@ PRODUCT_PACKAGES += \
     vendor.samsung.hardware.bluetooth.a2dp@1.0 \
     vendor.samsung.hardware.bluetooth@2.0 \
     lib_SamsungRec_07020 \
-    librecordalive \
-    libsecaudioinfo \
     libswdap \
     camera.exynos990 \
+    libbauthserver \
+    libbauthtzcommon \
+    libegis_fp_normal_sensor_test \
     libexynoscamera3 \
     libexynoscamera_bayergdc_plugin \
     libexynoscamera_fakemultiframe \
     libexynoscamera_vpl_plugin \
+    libgf_in_system_lib \
+    libqfp_sensortest \
+    libsynaFpSensorTestNwd \
+    libteecl \
+    libuuid_vendor \
     libwrappergps \
+    sensors.grip \
     sensors.sensorhub \
     HotwordEnrollmentOKGoogleEx2CORTEXM4 \
     HotwordEnrollmentXGoogleEx2CORTEXM4 \
     android.hardware.bluetooth@1.0-service-qti \
-    gpsd
+    gpsd \
+    tzdaemon

@@ -5,10 +5,12 @@
 soong_namespace {
     imports: [
         "device/samsung/universal9830-common",
+        "hardware/samsung",
         "hardware/samsung_slsi-linaro/exynos",
-        "hardware/samsung_slsi-linaro/graphics",
-        "vendor/samsung/universal9830-common",
         "hardware/samsung_slsi-linaro/exynos/gralloc/gralloc3",
+        "hardware/samsung_slsi-linaro/graphics",
+        "hardware/samsung_slsi-linaro/interfaces",
+        "vendor/samsung/universal9830-common",
     ],
 }
 
@@ -177,65 +179,6 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
-    name: "librecordalive",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/librecordalive.so",
-            ],
-            shared_libs: [
-                "liblog",
-                "libutils",
-                "libcutils",
-                "lib_SamsungRec_07020",
-                "libsecaudioinfo",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
-    name: "libsecaudioinfo",
-    owner: "samsung",
-    strip: {
-        none: true,
-    },
-    target: {
-        android_arm: {
-            srcs: [
-                "proprietary/vendor/lib/libsecaudioinfo.so",
-            ],
-            shared_libs: [
-                "libcutils",
-                "libutils",
-                "libfloatingfeature",
-                "libsecnativefeature",
-                "libbinder",
-                "liblog",
-                "libc++",
-                "libc",
-                "libm",
-                "libdl",
-            ],
-        },
-    },
-    compile_multilib: "32",
-    prefer: true,
-    soc_specific: true,
-}
-
-cc_prebuilt_library_shared {
     name: "libswdap",
     owner: "samsung",
     strip: {
@@ -301,6 +244,91 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libbauthserver",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libbauthserver.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libutils",
+                "libcutils",
+                "libbinder",
+                "libbauthtzcommon",
+                "libsynaFpSensorTestNwd",
+                "libegis_fp_normal_sensor_test",
+                "libgf_in_system_lib",
+                "libqfp_sensortest",
+                "libcrypto",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libbauthtzcommon",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libbauthtzcommon.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libteecl",
+                "libc",
+                "libm",
+                "libdl",
+                "libc++",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libegis_fp_normal_sensor_test",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libegis_fp_normal_sensor_test.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc",
+                "libm",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libexynoscamera3",
     owner: "samsung",
     strip: {
@@ -333,7 +361,7 @@ cc_prebuilt_library_shared {
                 "libsensorlistener",
                 "libuniapi",
                 "libSEF.quram",
-                "libsecril-client_vendor",
+                "libsecril-client",
                 "vendor.samsung.hardware.thermal@1.0",
                 "libhidlbase",
                 "libexynoscamera_vpl_plugin",
@@ -439,6 +467,128 @@ cc_prebuilt_library_shared {
 }
 
 cc_prebuilt_library_shared {
+    name: "libgf_in_system_lib",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libgf_in_system_lib.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libqfp_sensortest",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libqfp_sensortest.so",
+            ],
+            shared_libs: [
+                "libcutils",
+                "liblog",
+                "libutils",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libsynaFpSensorTestNwd",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libsynaFpSensorTestNwd.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libdl",
+                "libc",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libteecl",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libteecl.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libuuid_vendor",
+    stem: "libuuid",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/libuuid.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libc",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
     name: "libwrappergps",
     owner: "samsung",
     strip: {
@@ -453,11 +603,43 @@ cc_prebuilt_library_shared {
                 "liblog",
                 "libcutils",
                 "libutils",
-                "libsecril-client_vendor",
+                "libsecril-client",
                 "libsqlite",
                 "libhardware_legacy",
                 "libbinder",
                 "libsecnativefeature",
+                "libc++",
+                "libc",
+                "libm",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    prefer: true,
+    soc_specific: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "sensors.grip",
+    owner: "samsung",
+    strip: {
+        none: true,
+    },
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/lib64/sensors.grip.so",
+            ],
+            shared_libs: [
+                "liblog",
+                "libcutils",
+                "libutils",
+                "libfmq",
+                "libhidlbase",
+                "libhardware",
+                "android.hardware.sensors@2.0",
+                "android.hardware.sensors@2.0-ScopedWakelock",
                 "libc++",
                 "libc",
                 "libm",
@@ -597,5 +779,30 @@ cc_prebuilt_binary {
     },
     prefer: true,
     relative_install_path: "hw",
+    soc_specific: true,
+}
+
+cc_prebuilt_binary {
+    name: "tzdaemon",
+    owner: "samsung",
+    target: {
+        android_arm64: {
+            srcs: [
+                "proprietary/vendor/bin/tzdaemon",
+            ],
+            shared_libs: [
+                "libteecl",
+                "libuuid_vendor",
+                "liblog",
+                "libc",
+                "libdl",
+            ],
+        },
+    },
+    compile_multilib: "64",
+    strip: {
+        none: true,
+    },
+    prefer: true,
     soc_specific: true,
 }
